@@ -3,8 +3,8 @@ import java.util.Vector;
 
 public class Basket {
 	
-	private Vector<Integer> productID;
-	private Vector<Vector<Integer>> personalOrder;
+	private Vector<Integer> productID; // 제품 아이디
+	private Vector<Vector<Integer>> personalOrder; // 퍼스널 오더
 	
 	public Basket() {
 		this.productID = new Vector<Integer>(2);
@@ -49,6 +49,7 @@ public class Basket {
 	}
 	
 	public static Vector<String> getBasket(Basket basket) {
+		// 인자 값인 basket 변수를 이용해 주문서 내용(output)을 구성하는 함수입니다.
 		Vector<String> output = new Vector<String>(1);
 		
 		if(basket.productID.size() > 0) {
