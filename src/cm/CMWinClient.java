@@ -734,6 +734,7 @@ public class CMWinClient extends JFrame {
 			m_clientStub.chat("/SERVER", alarm_str);
 		}
 
+	// 초키 메뉴 출력 함수
 	public void printAllMenus() {
 		printMessage("----------------------------------\n");
 		printMessage("0 : 메뉴 다시 보기\n");
@@ -743,6 +744,7 @@ public class CMWinClient extends JFrame {
 		printMessage("----------------------------------\n");
 	}
 
+	// 로그인 이후 메뉴 출력 함수
 	public void printAllOrderMenus() {
 		printMessage("----------------------------------\n");
 		printMessage("0 : 메뉴 다시 보기\n");
@@ -751,7 +753,8 @@ public class CMWinClient extends JFrame {
 		printMessage("6 : 결제하기\n");
 		printMessage("----------------------------------\n");
 	}
-
+	
+	// 로그인 (1)
 	public void loginMember() {
 		String strUserName = null;
 		String strPassword = null;
@@ -784,6 +787,7 @@ public class CMWinClient extends JFrame {
 		printMessage("메뉴를 보려면 0을 입력해주세요");
 	}
 
+	// 회원가입 (2)
 	public void joinMember() {
 		String strName = null;
 		String strPasswd = null;
@@ -820,6 +824,7 @@ public class CMWinClient extends JFrame {
 		return;
 	}
 
+	// 주문하기 (3,4)
 	public void startOrder() {
 		// 바스켓 initialize
 		basket = new Basket();
@@ -949,6 +954,7 @@ public class CMWinClient extends JFrame {
 		return;
 	}
 
+	// 장바구니 확인하기 (5)
 	public void printBasket() {
 		for(int i = 0; i < basketList.size(); i++) {
 			Vector<String> output = Basket.getBasket(basketList.elementAt(i));
