@@ -39,12 +39,12 @@ public class notification {
 		double dValue = Math.random();
 		int tValue = (int)(dValue * 10); 
 		Thread.sleep(tValue*1000);
-		return "we are done!";
+		return "주문이 완료됐습니다 ! 음식을 받아가세요 !";
 		
 	}
 	
 	public void alarmEventall(){  //紐⑤뱺 �궗�슜�옄�뿉寃� �븷�씤 �씠踰ㅽ듃 �븣由� 硫붿꽭吏�瑜� �쟾�넚 
-		String strText = "%%% 30% discount for every sale !!! %%%";
+		String strText = "%%% [회원 전체 메세지] 30% 할인행사 시작 !!! 우리 매장에 찾아오세요 !! %%%";
 		//m_serverStub.broadcast()
 		//m_clientStub.chat(strTarget, strMessage);
 		m_server.printMessage(strText);
