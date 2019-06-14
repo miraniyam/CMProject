@@ -698,7 +698,7 @@ public class CMWinClient extends JFrame {
 //		pay.savePayInfo(encryp_card_num, pay_price);
 		
 		// 주문내용 알람보내기
-		printAlarm(card_num, pay_price);
+		printAlarm(encryp_card_num, pay_price);
 		
 		// 주문한 음식 완료됐을 때 알람
 		printCompleteAlarm();
@@ -730,7 +730,8 @@ public class CMWinClient extends JFrame {
 	// 전체 알람보내기
 		public void printAllAlarm() {
 			notification noti = new notification();
-			noti.alarmEventall();
+			String alarm_str = noti.alarmEventall();
+			m_clientStub.chat("/SERVER", alarm_str);
 		}
 
 	public void printAllMenus() {

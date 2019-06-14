@@ -105,19 +105,24 @@ public class Pay {
       this.payMessenger = new CMClientStub();
    }
 
-   /*
-    * public void connectDB() { Connection connection = null; Statement st = null;
-    * 
-    * try { Class.forName("com.mysql.jdbc.Driver");
-    * 
-    * try { connection = DriverManager.getConnection(
-    * "jdbc:mysql://127.0.0.1:3306/mydb?serverTimezone=UTC", "root", "rlarl123");
-    * st = (Statement) connection.createStatement(); } catch (SQLException e) { //
-    * TODO Auto-generated catch block e.printStackTrace(); }
-    * 
-    * } catch (ClassNotFoundException e) { // TODO Auto-generated catch block
-    * e.printStackTrace(); } }
-    */
+  
+    public void connectDB() { 
+    	Connection connection = null; Statement st = null;
+     
+	    try { Class.forName("com.mysql.jdbc.Driver");
+		    try { connection = DriverManager.getConnection(
+			     "jdbc:mysql://127.0.0.1:3306/mydb?serverTimezone=UTC", "root", "rlarl123");
+			     st = (Statement) connection.createStatement(); 
+	     } catch (SQLException e) { 
+	    	 //TODO Auto-generated catch block 
+		    	 e.printStackTrace(); 
+		     }
+	     } catch (ClassNotFoundException e) { 
+	    	 // TODO Auto-generated catch block
+		     e.printStackTrace(); 
+		     } 
+     }
+    
 
    public void savePayInfo(String cardNum, int payPrice) {
       String sql;

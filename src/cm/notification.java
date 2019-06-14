@@ -1,7 +1,9 @@
 package cm;
 import java.io.*;
+import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
 
 import kr.ac.konkuk.ccslab.cm.event.CMDummyEvent;
 import kr.ac.konkuk.ccslab.cm.event.CMEvent;
@@ -34,7 +36,7 @@ public class notification {
     	return strMessage;
 	}
     
-	public String alarmComplete(String user) throws InterruptedException{  //�젣�뭹 �젣�옉 �셿猷뚯떆 �븣由� �쟾�넚(�옖�뜡 �떆媛� �씠�썑�뿉 �빐以�)
+	public String alarmComplete(String user) throws InterruptedException{ 
 		
 		double dValue = Math.random();
 		int tValue = (int)(dValue * 10); 
@@ -43,13 +45,21 @@ public class notification {
 		
 	}
 	
-	public void alarmEventall(){  //紐⑤뱺 �궗�슜�옄�뿉寃� �븷�씤 �씠踰ㅽ듃 �븣由� 硫붿꽭吏�瑜� �쟾�넚 
+	public String alarmEventall(){ 
 		String strText = "%%% [회원 전체 메세지] 30% 할인행사 시작 !!! 우리 매장에 찾아오세요 !! %%%";
-		//m_serverStub.broadcast()
-		//m_clientStub.chat(strTarget, strMessage);
-		m_server.printMessage(strText);
-		
+//		Charset charset = Charset.forName("UTF-8");
+//		ByteBuffer byte_buf = str_to_bb(strText, charset);
+//		CMEvent cme = new CMEvent(byte_buf);
+//		m_serverStub.broadcast(cme);
+//		//m_clientStub.chat(strTarget, strMessage);
+		return strText;
+
 	}
+	
+	// 문자열 바이트버퍼로
+	  public static ByteBuffer str_to_bb(String msg, Charset charset){
+	      return ByteBuffer.wrap(msg.getBytes(charset));
+	  }
 
 	public void processEvent(CMEvent cme) {
 		// TODO Auto-generated method stub
